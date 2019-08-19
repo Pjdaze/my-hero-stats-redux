@@ -20,17 +20,29 @@ class Home extends React.Component {
       })
       .catch(err => console.log(err));
   }
-  getBats = () => {
-    this.setState({
-      heroes: this.state.heroes.filter(x => x.name.slice(0, 3) === "Bat")
-    });
-    console.log(this.state.heroes);
-  };
 
   render() {
+    const { heroes } = this.state;
+
+    const getBats = heroes.filter(
+      x => x.name.slice(0, 3).toLowerCase() === "bat"
+    );
+
+    const getBatman = getBats.filter(hero => hero.slug === "69-batman");
+    const batName = getBatman.map(x => x.name);
+
+    console.log("These are the Bats ", ...getBats);
+    console.log("This is Batman's profile", getBatman.map(x => x.images));
     return (
       <HomeWrap>
-        <div className="hero-box">{this.state.getBats}</div>
+        <div className="hero-box" heroes={heroes}>
+          <p>Name: {batName}</p>
+          <img
+            style={{ height: "200px", width: "200px" }}
+            src={getBatman.map(x => x.images.md)}
+            alt="x"
+          />
+        </div>
         <button onClick={this.getBats}>Get Random Hero</button>
       </HomeWrap>
     );
