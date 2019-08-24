@@ -1,8 +1,9 @@
 import React from "react";
-import Home from "./components/Home";
+
 import "./App.css";
 import Routes from "./routes";
 import { tsPropertySignature } from "@babel/types";
+import Home from "./containers/Home";
 
 function App(props) {
   return (
