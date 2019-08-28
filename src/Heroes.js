@@ -1,7 +1,7 @@
 export const heroes = [
   {
     id: "pedro diaz",
-    name: "Pedro Diaz",
+    name: "Batman",
     username: "pjdux",
     number: "787-222-3366",
     DOB: 1

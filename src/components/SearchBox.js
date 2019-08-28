@@ -1,11 +1,17 @@
 import React from "react";
+//child components expect props from parent components like this one
+import Button from "../components/Button";
+
+const stylex = {
+  padding: "10px"
+};
 
 const SearchBox = ({ searchfield, searchChange }) => {
   return (
-    <div className="pa2">
+    <div style={stylex}>
       <input
+        style={{ padding: "10px" }}
         aria-label="search heroes"
-        className="pa3 ba b--green bg-lightest-blue"
         type="search"
         placeholder="search heroes"
         onChange={searchChange}

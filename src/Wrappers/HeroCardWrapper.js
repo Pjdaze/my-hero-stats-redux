@@ -2,9 +2,12 @@ import styled from "styled-components";
 
 const HeroCardWrapper = styled.div`
   border: 1px solid #222;
-  height: 100%;
-  width: 100%
-  max-width: 900px;
+  border-radius: 7px;
+  padding: 10px;
+
+  img {
+    width: 200px;
+  }
 `;
 
 export default HeroCardWrapper;

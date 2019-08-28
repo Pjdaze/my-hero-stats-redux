@@ -20,7 +20,7 @@ class App extends React.Component {
       .then(res => {
         this.setState({ heroes: res });
 
-        console.log(res);
+        console.log("This is the data form the Heroes API: ", res);
       });
   }
   onSearchChange = e => {
@@ -34,11 +34,15 @@ class App extends React.Component {
       x.name.toLowerCase().includes(this.state.searchField.toLowerCase())
     );
 
+    const powers = console.log(
+      "this are the powers",
+      this.state.heroes.map(x => x.powerstats)
+    );
     return (
       <HomeWrap className="home">
         <header style={{ height: "100px" }}>
           {" "}
-          <h1>Your Hero Self</h1>
+          <h1>Find Your Hero</h1>
         </header>
         <SearchBox searchChange={this.onSearchChange} />
 
