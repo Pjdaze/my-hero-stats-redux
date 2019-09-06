@@ -13,39 +13,40 @@ const FlippedCard = ({ images, name, powers, appearance, biography }) => {
   return (
     <HeroCardWrapper
       style={{
-        backgroundColor: "#000",
         backgroundImage: "url(" + images + ")",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100% , 100%",
-        filter: "blur(5px)",
+        backgroundSize: "cover",
 
         color: "#fff"
       }}
     >
-      <div className="info">
-        <div style={{ backgroundColor: "rgba(0,0,0, 0.4)", zIndex: 2 }}>
-          {" "}
-          <h2>{name}</h2>
-          <h2>Nicknames: </h2>
-          <p>{biography.aliases.join(", ")}</p>
-          <h2>Place Of Birth:</h2>
-          <p>{biography.placeOfBirth}</p>
-          <h2>First Appearance:</h2>
-          <p>{biography.firstAppearance}</p>
-          <h2>Publisher</h2>
-          <p>{biography.firstAppearance}</p>
-          <h2>Appearance</h2>
-          <ul>
-            <li>Gender: {appearance.gender}</li>
-            <li>Race: {appearance.race}</li>
-            <li>Hair Color: {appearance.hairColor}</li>
-            <li>Height: {appearance.height[0]}</li>
-            <li>Weight: {appearance.weight[0]}</li>
-          </ul>
-          <h2>Powers</h2>
-          <ul>{getStats}</ul>
-        </div>
+      <div
+        style={{
+          zIndex: 60,
+          textShadow: "0px 1px 5px #003F7F"
+        }}
+      >
+        {" "}
+        <h4>{name}</h4>
+        <h4>Nicknames: </h4>
+        <p>{biography.aliases.join(", ")}</p>
+        <h4>Place Of Birth:</h4>
+        <p>{biography.placeOfBirth}</p>
+        <h4>First Appearance:</h4>
+        <p>{biography.firstAppearance}</p>
+        <h4>Publisher</h4>
+        <p>{biography.firstAppearance}</p>
+        <h4>Appearance</h4>
+        <ul>
+          <li>Gender: {appearance.gender}</li>
+          <li>Race: {appearance.race}</li>
+          <li>Hair Color: {appearance.hairColor}</li>
+          <li>Height: {appearance.height[0]}</li>
+          <li>Weight: {appearance.weight[0]}</li>
+        </ul>
+        <h2>Powers</h2>
+        <ul>{getStats}</ul>
       </div>
 
       <TwitterButton />
