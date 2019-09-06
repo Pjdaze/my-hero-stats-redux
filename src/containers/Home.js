@@ -1,6 +1,6 @@
 import React from "react";
 import HomeWrap from "../Wrappers/HomeWrap";
-import { heroes } from "../Heroes";
+import { heroes } from "../fake_data/Heroes";
 import SearchBox from "../components/SearchBox";
 import HeroCardList from "../components/HeroCardList";
 import ScrollBox from "../components/ScrollBox";
@@ -11,7 +11,8 @@ class App extends React.Component {
 
     this.state = {
       heroes: [],
-      searchField: ""
+      searchField: "",
+      card: {}
     };
   }
   componentDidMount() {
@@ -29,15 +30,19 @@ class App extends React.Component {
     });
   };
 
+  handleClick = () => {
+    this.setState({
+      card: "flippedCard"
+    });
+  };
+
   render() {
-    const filteredHeroes = this.state.heroes.filter(x =>
-      x.name.toLowerCase().includes(this.state.searchField.toLowerCase())
+    const { heroes, searchField } = this.state;
+
+    const findHeroe = heroes.filter(x =>
+      x.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
-    const powers = console.log(
-      "this are the powers",
-      this.state.heroes.map(x => x.powerstats)
-    );
     return (
       <HomeWrap className="home">
         <header style={{ height: "100px" }}>
@@ -46,7 +51,7 @@ class App extends React.Component {
         </header>
         <SearchBox searchChange={this.onSearchChange} />
 
-        <HeroCardList heroes={filteredHeroes.slice(0, 12)} />
+        <HeroCardList heroes={findHeroe.slice(0, 12)} />
       </HomeWrap>
     );
   }

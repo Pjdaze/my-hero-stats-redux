@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const HeroCardWrapper = styled.div`
   border: 1px solid #222;
@@ -8,6 +8,13 @@ const HeroCardWrapper = styled.div`
   img {
     width: 200px;
   }
+
+  ${props =>
+    props.primary &&
+    css`
+      background: #222;
+      color: #fff;
+    `}
 `;
 
 export default HeroCardWrapper;
