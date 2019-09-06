@@ -36,9 +36,11 @@ export const FlippedHeroList = ({ heroes }) => {
         return (
           <FlippedCard
             key={i}
+            appearance={heroes[i].appearance}
             name={heroes[i].name}
             images={heroes[i].images.lg}
             powers={heroes[i].powerstats}
+            biography={heroes[i].biography}
           />
         );
       })}

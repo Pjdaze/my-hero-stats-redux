@@ -21,7 +21,7 @@ class App extends React.Component {
       .then(res => {
         this.setState({ heroes: res });
 
-        console.log("This is the data form the Heroes API: ", res);
+        console.log("This is the data form the Heroes API: ", res.slice(0, 5));
       });
   }
   onSearchChange = e => {
