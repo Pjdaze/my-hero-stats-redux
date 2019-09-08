@@ -14,17 +14,21 @@ const FlippedCard = ({ images, name, powers, appearance, biography }) => {
   return (
     <HeroCardWrapper
       style={{
-        backgroundImage: "url(" + images + ")",
+        //backgroundImage: "url(" + images + ")",
+        background: " #000046" /* fallback for old browsers */,
+        background: "-webkit-linear-gradient(to bottom, #1CB5E0, #000046)",
+        background: `linear-gradient(to bottom, #1CB5E0, #000046`,
+
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-
+        backgroundSize: "contain",
+        overflowY: "scroll",
+        height: "350px",
         color: "#fff"
       }}
     >
       <div
         style={{
-          zIndex: 60,
           textShadow: "0px 1px 5px #003F7F"
         }}
       >

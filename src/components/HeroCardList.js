@@ -11,7 +11,7 @@ const ManageMembers = function(member) {
   }
 };
 
-export const HeroCardList = ({ heroes }) => {
+export const HeroCardList = ({ heroes, flipped, flip }) => {
   return (
     <ScrollBox>
       {" "}
@@ -21,6 +21,7 @@ export const HeroCardList = ({ heroes }) => {
             key={i}
             name={heroes[i].name}
             images={heroes[i].images.lg}
+            onClick={flip}
           />
         );
       })}
@@ -28,7 +29,7 @@ export const HeroCardList = ({ heroes }) => {
   );
 };
 
-export const FlippedHeroList = ({ heroes }) => {
+export const FlippedHeroList = ({ heroes, flipped, flip }) => {
   return (
     <ScrollBox>
       {" "}
@@ -41,6 +42,7 @@ export const FlippedHeroList = ({ heroes }) => {
             images={heroes[i].images.lg}
             powers={heroes[i].powerstats}
             biography={heroes[i].biography}
+            onClick={flip}
           />
         );
       })}
