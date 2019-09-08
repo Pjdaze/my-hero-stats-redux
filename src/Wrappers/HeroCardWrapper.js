@@ -12,9 +12,26 @@ const HeroCardWrapper = styled.div`
   ${props =>
     props.primary &&
     css`
-      background: #222;
-      color: #fff;
+ background: #000046;
+        background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
+        background: linear-gradient(to bottom, #1CB5E0, #000046);
+
+        background-Position: center;
+        background-repeat: no-repeat;
+        background-size: contain
+        overflow-Y: scroll;
+        height: 350px;
+        color #fff;
+        text-shadow: 0px 1px 5px #003F7F;
+
+
     `}
+
+  img-wrap {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+  }
 `;
 
 export default HeroCardWrapper;
