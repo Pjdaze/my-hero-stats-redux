@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.61b42f10.chunk.css",
-    "main.js": "/static/js/main.0762262a.chunk.js",
-    "main.js.map": "/static/js/main.0762262a.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.503d2629.js",
-    "runtime~main.js.map": "/static/js/runtime~main.503d2629.js.map",
-    "static/js/2.1a820218.chunk.js": "/static/js/2.1a820218.chunk.js",
-    "static/js/2.1a820218.chunk.js.map": "/static/js/2.1a820218.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.066b1d2433082ef720bf5ad772b6e5dd.js": "/precache-manifest.066b1d2433082ef720bf5ad772b6e5dd.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.61b42f10.chunk.css.map": "/static/css/main.61b42f10.chunk.css.map"
+    "main.css": "/my-hero-stats-redux/static/css/main.61b42f10.chunk.css",
+    "main.js": "/my-hero-stats-redux/static/js/main.8a3679a1.chunk.js",
+    "main.js.map": "/my-hero-stats-redux/static/js/main.8a3679a1.chunk.js.map",
+    "runtime~main.js": "/my-hero-stats-redux/static/js/runtime~main.7dadd0ba.js",
+    "runtime~main.js.map": "/my-hero-stats-redux/static/js/runtime~main.7dadd0ba.js.map",
+    "static/js/2.77de5535.chunk.js": "/my-hero-stats-redux/static/js/2.77de5535.chunk.js",
+    "static/js/2.77de5535.chunk.js.map": "/my-hero-stats-redux/static/js/2.77de5535.chunk.js.map",
+    "index.html": "/my-hero-stats-redux/index.html",
+    "precache-manifest.b3506fb873a1c9ccba2d8c7993a0c2f6.js": "/my-hero-stats-redux/precache-manifest.b3506fb873a1c9ccba2d8c7993a0c2f6.js",
+    "service-worker.js": "/my-hero-stats-redux/service-worker.js",
+    "static/css/main.61b42f10.chunk.css.map": "/my-hero-stats-redux/static/css/main.61b42f10.chunk.css.map"
   }
 }
