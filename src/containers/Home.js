@@ -17,6 +17,8 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
+    console.log(this.props.store);
+
     fetch("https://akabab.github.io/superhero-api/api/all.json")
       .then(data => data.json())
       .then(res => {
