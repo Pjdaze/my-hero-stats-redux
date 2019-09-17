@@ -2,6 +2,7 @@
   "name": "ranking-heroes",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pjdaze.github.io/my-hero-stats-redux/",
   "dependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -37,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }

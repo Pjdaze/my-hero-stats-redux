@@ -5,6 +5,7 @@ const HeroCardWrapper = styled.div`
   border-radius: 7px;
   padding: 10px;
 
+  margin: 0 auto;
   img {
     width: 200px;
   }
@@ -15,6 +16,8 @@ const HeroCardWrapper = styled.div`
  background: #000046;
         background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
         background: linear-gradient(to bottom, #1CB5E0, #000046);
+  width: 350px;
+  margin: 0 auto;
 
         background-Position: center;
         background-repeat: no-repeat;
@@ -26,7 +29,7 @@ const HeroCardWrapper = styled.div`
 
         position: absolute;
     left: 50%;
-    margin-left: -180px;
+    margin-left: -175px;
         img {
     border-radius: 50%;
     height: 150px;
