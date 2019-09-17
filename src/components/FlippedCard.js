@@ -2,7 +2,14 @@ import React from "react";
 import HeroCardWrapper from "../Wrappers/HeroCardWrapper";
 import TwitterButton from "./TwitterButton";
 
-const FlippedCard = ({ images, name, powers, appearance, biography }) => {
+const FlippedCard = ({
+  images,
+  name,
+  powers,
+  appearance,
+  biography,
+  onFlip
+}) => {
   //const appearanceStats = Object.entries(appearance);
 
   const powerStats = Object.entries(powers);
@@ -43,7 +50,7 @@ const FlippedCard = ({ images, name, powers, appearance, biography }) => {
         <h2>Powers Stats</h2>
         <ul>{getStats}</ul>
       </div>
-
+      <button onClick={onFlip}>FLIP CARD</button>
       <TwitterButton />
     </HeroCardWrapper>
   );

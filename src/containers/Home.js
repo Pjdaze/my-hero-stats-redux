@@ -2,7 +2,7 @@ import React from "react";
 import HomeWrap from "../Wrappers/HomeWrap";
 import { heroes } from "../fake_data/Heroes";
 import SearchBox from "../components/SearchBox";
-import { HeroCardList, FlippedHeroList } from "../components/HeroCardList";
+import HeroCardList from "../components/HeroCardList";
 import ScrollBox from "../components/ScrollBox";
 
 class App extends React.Component {
@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state = {
       heroes: [],
       searchField: "",
-      flipped: false
+      flipped: false,
+      cardToFlip: ""
     };
   }
   componentDidMount() {
@@ -30,31 +31,33 @@ class App extends React.Component {
     });
   };
 
-  handleClick = () => {
+  handleClick = e => {
     this.setState({
-      flipped: !this.state.flipped
+      flipped: !this.state.flipped,
+      cardToFlip: e.target.id
     });
   };
 
   render() {
-    const { heroes, searchField, flipped } = this.state;
+    const { heroes, searchField, flipped, cardToFlip } = this.state;
 
     const findHeroe = heroes.filter(x =>
       x.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
     return (
-      <HomeWrap onClick={this.handleClick} className="home">
+      <HomeWrap className="home">
         <header style={{ height: "100px" }}>
           {" "}
           <h1>Find Your Hero</h1>
         </header>
         <SearchBox searchChange={this.onSearchChange} />
-        {!flipped ? (
-          <HeroCardList heroes={findHeroe.slice(0, 12)} />
-        ) : (
-          <FlippedHeroList heroes={findHeroe.slice(0, 12)} />
-        )}
+        <HeroCardList
+          heroes={findHeroe.slice(0, 12)}
+          onFlip={this.handleClick}
+          isFlipped={flipped}
+          cardToFlip={cardToFlip}
+        />
       </HomeWrap>
     );
   }

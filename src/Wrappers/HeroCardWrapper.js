@@ -24,13 +24,24 @@ const HeroCardWrapper = styled.div`
         color #fff;
         text-shadow: 0px 1px 5px #003F7F;
 
-
-    `}
-
-  img-wrap {
+        position: absolute;
+    left: 50%;
+    margin-left: -180px;
+        img {
     border-radius: 50%;
     height: 150px;
     width: 150px;
+ 
+  }
+
+
+
+    `}
+
+  button {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
   }
 `;
 
