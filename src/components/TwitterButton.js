@@ -3,10 +3,9 @@ import { TwitterShareButton, TwitterFollowButton } from "react-twitter-embed";
 const TwitterButton = props => {
   return (
     <TwitterShareButton
-      url={"https://www.pjdux.com"}
+      url={"https://pjdaze.github.io/my-hero-stats-redux/"}
       options={{
-        text: "So This Are The Stats On My Favorite Super Hero!",
-        via: "pjdux"
+        text: "So This Are The Stats On My Favorite Super Hero!"
       }}
     />
   );

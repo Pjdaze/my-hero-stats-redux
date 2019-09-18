@@ -5,16 +5,17 @@ import { createStore } from "redux";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-
+import { searchHeroes } from "./reducers";
 import * as serviceWorker from "./serviceWorker";
-import { searchRobots } from "./reducers";
 
-const store = createStore(searchRobots);
+const store = createStore(searchHeroes);
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App store={store} />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
 
