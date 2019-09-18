@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ScrollBox = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(4, 1fr);
 
   grid-gap: 10px 10px;
 

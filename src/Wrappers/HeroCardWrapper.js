@@ -1,14 +1,35 @@
 import styled, { css } from "styled-components";
 
 const HeroCardWrapper = styled.div`
-  border: 1px solid #222;
   border-radius: 7px;
-  padding: 10px;
-
+  background-color: #1d66bb;
   margin: 0 auto;
+
   img {
-    width: 200px;
+    width: 150px;
+    border-radius: 5px;
   }
+
+  .info {
+    h2 {
+      font-size: calc(10px + 1vw);
+      margin: 1% auto;
+    }
+  }
+  .flip-button {
+    margin: 1% auto;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    transition: linear 0.3s ease-in-out;
+
+    &:hover {
+      border: 0.1px solid #fff;
+      border-radius: 0px;
+    }
+  }
+
+  box-shadow: 0 0 5px 0px #f5f5f5;
 
   ${props =>
     props.primary &&

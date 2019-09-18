@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import SpaceBG from "../assets/space.jpg";
 const HomeWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,7 +7,9 @@ const HomeWrap = styled.div`
   align-items: center;
   text-align: center;
   margin: 0 auto;
-  max-width: 1000px;
+
+  background-image: url(${SpaceBG});
+  background-size: cover;
 `;
 
 export default HomeWrap;

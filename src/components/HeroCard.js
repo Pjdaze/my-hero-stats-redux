@@ -7,10 +7,10 @@ const HeroCard = ({ images, name, onFlip }) => {
       <img src={images} alt="heroes" />
       <div className="info">
         <h2>{name}</h2>
+        <button className="flip-button" onClick={onFlip} id={name}>
+          FLIP CARD
+        </button>
       </div>
-      <button onClick={onFlip} id={name}>
-        FLIP CARD
-      </button>
     </HeroCardWrapper>
   );
 };
