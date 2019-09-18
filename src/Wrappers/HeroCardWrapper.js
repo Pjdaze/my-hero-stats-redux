@@ -44,7 +44,7 @@ const HeroCardWrapper = styled.div`
         background-repeat: no-repeat;
         background-size: contain
         overflow-Y: scroll;
-        height: 350px;
+        height: 500px;
         color #fff;
         text-shadow: 0px 1px 5px #003F7F;
 
