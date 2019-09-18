@@ -12,7 +12,11 @@ const HeroCardWrapper = styled.div`
 
   .info {
     h2 {
-      font-size: calc(10px + 1vw);
+      color: #f5f5f5;
+
+      font-family: "Teko", sans-serif;
+
+      font-size: calc(18px + 0.5vw);
       margin: 1% auto;
     }
   }

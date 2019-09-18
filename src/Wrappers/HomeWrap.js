@@ -10,6 +10,14 @@ const HomeWrap = styled.div`
 
   background-image: url(${SpaceBG});
   background-size: cover;
+  background-repeat: no-repeat;
+
+  header {
+    h1 {
+      font-family: "Monoton", sans-serif;
+      color: #fff;
+    }
+  }
 `;
 
 export default HomeWrap;
