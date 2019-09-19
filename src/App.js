@@ -61,7 +61,7 @@ class App extends React.Component {
     const { onSearchChange, searchField } = this.props;
 
     const findHeroe = heroes.filter(x =>
-      Math.random(x.name.toLowerCase().includes(searchField.toLowerCase()))
+      x.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
     return (
