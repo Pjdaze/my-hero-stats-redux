@@ -50,14 +50,7 @@ margin-left: -175px;
         color #fff;
         text-shadow: 0px 1px 5px #003F7F;
     
-
-
-
-
-
-     
-
-        img {
+img {
     border-radius: 50%;
     height: 150px;
     width: 150px;
