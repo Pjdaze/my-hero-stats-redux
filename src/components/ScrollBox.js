@@ -14,7 +14,7 @@ const ScrollBox = styled.div`
   }
 
   @media only screen and (max-width: 675px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
