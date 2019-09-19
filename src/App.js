@@ -42,7 +42,10 @@ class App extends React.Component {
       .then(res => {
         this.setState({ heroes: res });
 
-        console.log("This is the data form the Heroes API: ", res);
+        console.log(
+          "This is the data form the Heroes API: ",
+          res.slice(0, 100)
+        );
       });
   }
 
@@ -68,17 +71,8 @@ class App extends React.Component {
           <h1>Find Your Hero</h1>
         </header>
         <SearchBox searchChange={onSearchChange} />
-        {/* prettier-ignore */}
         <HeroCardList
-          heroes={findHeroe.filter(hero => {
-
-            const H = hero.id;
-            const IDLIST = [213,332,71,383,423,644,216,655,265,620,370,226]
-
-            return IDLIST.includes(H)
-
-          })}
-          
+          heroes={findHeroe.slice(0, 12)}
           onFlip={this.handleClick}
           isFlipped={flipped}
           cardToFlip={cardToFlip}
