@@ -11,6 +11,7 @@ const HomeWrap = styled.div`
   background-image: url(${SpaceBG});
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100%;
 
   header {
     h1 {

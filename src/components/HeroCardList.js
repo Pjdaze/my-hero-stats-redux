@@ -30,7 +30,7 @@ const HeroCardList = ({ heroes, onFlip, isFlipped, cardToFlip }) => {
               key={Math.random() + heroes[i]}
               appearance={heroes[i].appearance}
               name={heroes[i].name}
-              images={heroes[i].images.lg}
+              images={heroes[i].images.sm}
               powers={heroes[i].powerstats}
               biography={heroes[i].biography}
               onFlip={onFlip}
