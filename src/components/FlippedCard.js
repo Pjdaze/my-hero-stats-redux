@@ -50,7 +50,11 @@ const FlippedCard = ({
         <h2>Powers Stats</h2>
         <ul>{getStats}</ul>
       </div>
-      <button style={{ marginBottom: "10px" }} onClick={onFlip}>
+      <button
+        className="flip-button"
+        style={{ marginBottom: "10px" }}
+        onClick={onFlip}
+      >
         FlIP CARD
       </button>
       <TwitterButton />

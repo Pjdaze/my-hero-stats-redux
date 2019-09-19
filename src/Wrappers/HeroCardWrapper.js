@@ -25,9 +25,10 @@ const HeroCardWrapper = styled.div`
   .flip-button {
     margin: 1% auto;
     background-color: transparent;
-    border: 2px solid #f5f5f5;
+    border: 2px solid #f5f5f5 !important;
     font-weight: bold;
     transition: linear 0.3s ease-in-out;
+    color: #f5f5f5;
   }
 
   box-shadow: 0 0 5px 0px #f5f5f5;
@@ -49,6 +50,8 @@ margin-left: -175px;
         color #fff;
         text-shadow: 0px 1px 5px #003F7F;
     
+
+
 
 
 
