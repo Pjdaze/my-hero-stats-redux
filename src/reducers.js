@@ -4,8 +4,7 @@ import {
   REQUEST_HEROES_SUCCESS,
   REQUEST_HEROES_FAILED,
   SET_CURRENT_HERO,
-  CLICK_OFF,
-  CLICK_ON
+  CLICK_OFF
 } from "./constants";
 
 const searchInitialState = {
