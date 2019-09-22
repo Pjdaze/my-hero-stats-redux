@@ -9,21 +9,29 @@ import ScrollBox from "./components/ScrollBox";
 import Routes from "./routes";
 import "./App.css";
 
-import { setSearchField, requestHeroes } from "./actions";
+import {
+  setSearchField,
+  requestHeroes,
+  setOnClick,
+  setHeroID
+} from "./actions";
 
 const mapStateToProps = state => {
   return {
     searchField: state.searchHeroes.searchField,
     heroes: state.requestHeroes.heroes,
     isPending: state.requestHeroes.isPending,
-    err: state.requestHeroes.err
+    err: state.requestHeroes.err,
+    flipped: state.setOnClick.flipped,
+    setHero: state.setHero.cardToFlip
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     onSearchChange: event => dispatch(setSearchField(event.target.value)),
-    onRequestHeroes: () => dispatch(requestHeroes())
+    onRequestHeroes: () => dispatch(requestHeroes()),
+    handleClick: () => dispatch(setOnClick())
   };
 };
 
@@ -48,8 +56,15 @@ class App extends React.Component {
   };
 
   render() {
-    const { flipped, cardToFlip } = this.state;
-    const { heroes, onSearchChange, searchField, isPending } = this.props;
+    const {
+      heroes,
+      onSearchChange,
+      searchField,
+      isPending,
+      setHero,
+      setOnClick,
+      flipped
+    } = this.props;
 
     const findHeroe = heroes.filter(x =>
       x.name.toLowerCase().includes(searchField.toLowerCase())
@@ -66,9 +81,9 @@ class App extends React.Component {
         <SearchBox searchChange={onSearchChange} />
         <HeroCardList
           heroes={findHeroe.slice(0, 12)}
-          onFlip={this.handleClick}
+          onFlip={setOnClick}
           isFlipped={flipped}
-          cardToFlip={cardToFlip}
+          cardToFlip={setHero}
         />
         <Routes />
       </HomeWrap>

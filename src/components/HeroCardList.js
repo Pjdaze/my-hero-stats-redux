@@ -3,14 +3,6 @@ import HeroCard from "../components/HeroCard";
 import ScrollBox from "./ScrollBox";
 import FlippedCard from "./FlippedCard";
 
-const ManageMembers = function(member) {
-  if (!member.length) {
-    return "loading page";
-  } else {
-    return member.map(x => x.name);
-  }
-};
-
 const HeroCardList = ({ heroes, onFlip, isFlipped, cardToFlip }) => {
   return (
     <ScrollBox>

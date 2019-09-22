@@ -2,8 +2,12 @@ import {
   CHANGE_SEARCH_FIELD,
   REQUEST_HEROES_PENDING,
   REQUEST_HEROES_SUCCESS,
-  REQUEST_HEROES_FAILED
+  REQUEST_HEROES_FAILED,
+  SET_CURRENT_HERO,
+  CLICK_OFF,
+  CLICK_ON
 } from "./constants";
+
 //for search box
 export const setSearchField = text => ({
   type: CHANGE_SEARCH_FIELD,
@@ -18,4 +22,13 @@ export const requestHeroes = () => dispatch => {
     .then(res => res.json())
     .then(data => dispatch({ type: REQUEST_HEROES_SUCCESS, payload: data }))
     .catch(err => dispatch({ type: REQUEST_HEROES_FAILED, payload: err }));
+};
+
+export const setHeroID = event => ({
+  type: SET_CURRENT_HERO,
+  payload: event.target.id
+});
+
+export const setOnClick = () => dispatch => {
+  dispatch({ type: CLICK_OFF });
 };
