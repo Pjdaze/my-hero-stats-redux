@@ -66,7 +66,7 @@ export const setHero = (state = heroIdInitialState, action = {}) => {
 export const setOnClick = (state = clickInitialState, action = {}) => {
   switch (action.type) {
     case CLICK_OFF:
-      return { ...state, flipped: !state.flipped };
+      return { ...state, flipped: !state.flipped, cardToFlip: action.payload };
 
     default:
       return state;
