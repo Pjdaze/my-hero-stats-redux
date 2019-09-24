@@ -1,34 +1,25 @@
 import React from "react";
 import { connect } from "react-redux";
 import HomeWrap from "./Wrappers/HomeWrap";
+
+import { heroes } from "./fake_data/Heroes";
 import SearchBox from "./components/SearchBox";
 import HeroCardList from "./components/HeroCardList";
+import ScrollBox from "./components/ScrollBox";
 import Routes from "./routes";
 import "./App.css";
 
-import {
-  setSearchField,
-  requestHeroes,
-  setOnClick,
-  setHeroID
-} from "./actions";
+import { setSearchField } from "./actions";
 
 const mapStateToProps = state => {
   return {
-    searchField: state.searchHeroes.searchField,
-    heroes: state.requestHeroes.heroes,
-    isPending: state.requestHeroes.isPending,
-    err: state.requestHeroes.err,
-    flipped: state.setOnClick.flipped,
-    setHero: state.setHeroID
+    searchField: state.searchField
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSearchChange: event => dispatch(setSearchField(event.target.value)),
-    onRequestHeroes: () => dispatch(requestHeroes()),
-    handleClick: event => dispatch(setOnClick(event.target.id))
+    onSearchChange: event => dispatch(setSearchField(event.target.value))
   };
 };
 
@@ -37,12 +28,25 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      heroes: [],
+
       flipped: false,
       cardToFlip: ""
     };
   }
   componentDidMount() {
-    this.props.onRequestHeroes();
+    console.log(this.props.getState);
+
+    fetch("https://akabab.github.io/superhero-api/api/all.json")
+      .then(data => data.json())
+      .then(res => {
+        this.setState({ heroes: res });
+
+        console.log(
+          "This is the data form the Heroes API: ",
+          res.slice(0, 100)
+        );
+      });
   }
 
   handleClick = e => {
@@ -53,23 +57,14 @@ class App extends React.Component {
   };
 
   render() {
-    const {
-      heroes,
-      onSearchChange,
-      searchField,
-      isPending,
-      setHeroID,
-      handleClick,
-      flipped
-    } = this.props;
+    const { heroes, flipped, cardToFlip } = this.state;
+    const { onSearchChange, searchField } = this.props;
 
     const findHeroe = heroes.filter(x =>
       x.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
-    return isPending ? (
-      <h1> "Loading..."</h1>
-    ) : (
+    return (
       <HomeWrap className="home">
         <header style={{ height: "100px" }}>
           {" "}
@@ -78,9 +73,9 @@ class App extends React.Component {
         <SearchBox searchChange={onSearchChange} />
         <HeroCardList
           heroes={findHeroe.slice(0, 12)}
-          onFlip={handleClick}
+          onFlip={this.handleClick}
           isFlipped={flipped}
-          cardToFlip={setHeroID}
+          cardToFlip={cardToFlip}
         />
         <Routes />
       </HomeWrap>

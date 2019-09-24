@@ -1,25 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, combineReducers } from "redux";
-import { createLogger } from "redux-logger";
-import thunkMiddleware from "redux-thunk";
+import { createStore } from "redux";
 
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { searchHeroes, requestHeroes, setHeroID, setOnClick } from "./reducers";
+import { searchHeroes } from "./reducers";
 import * as serviceWorker from "./serviceWorker";
-const logger = createLogger();
-const rootReducer = combineReducers({
-  searchHeroes,
-  requestHeroes,
-  setHeroID,
-  setOnClick
-});
-const store = createStore(
-  rootReducer,
-  applyMiddleware(thunkMiddleware, logger)
-);
+
+const store = createStore(searchHeroes);
 
 ReactDOM.render(
   <Provider store={store}>

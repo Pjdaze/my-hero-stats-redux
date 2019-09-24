@@ -1,76 +1,14 @@
-import {
-  CHANGE_SEARCH_FIELD,
-  REQUEST_HEROES_PENDING,
-  REQUEST_HEROES_SUCCESS,
-  REQUEST_HEROES_FAILED,
-  SET_CURRENT_HERO,
-  TOGGLE
-} from "./constants";
+import { CHANGE_SEARCH_FIELD } from "./constants";
 
-const searchInitialState = {
+const initialState = {
   searchField: ""
 };
 
-const heroesInitialState = {
-  isPending: false,
-  heroes: [],
-  err: ""
-};
-
-const heroIdInitialState = {
-  cardToFlip: ""
-};
-
-const clickInitialState = {
-  flipped: false,
-  cardToFlip: ""
-};
-
 //////Here i use default params in case state or action is empty
-export const searchHeroes = (state = searchInitialState, action = {}) => {
+export const searchHeroes = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHANGE_SEARCH_FIELD:
       return { ...state, searchField: action.payload };
-
-    default:
-      return state;
-  }
-};
-
-export const requestHeroes = (state = heroesInitialState, action = {}) => {
-  switch (action.type) {
-    case REQUEST_HEROES_PENDING:
-      return { ...state, isPending: true };
-    case REQUEST_HEROES_SUCCESS:
-      return { ...state, heroes: action.payload, isPending: false };
-
-    case REQUEST_HEROES_FAILED:
-      return { ...state, err: action.payload, isPending: false };
-
-    default:
-      return state;
-  }
-};
-
-export const setHeroID = (state = heroIdInitialState, action = {}) => {
-  switch (action.type) {
-    case SET_CURRENT_HERO:
-      console.log("PAYLOADDDDDD", action.payload);
-      return { ...state, cardToFlip: action.payload };
-
-    default:
-      return state;
-  }
-};
-
-export const setOnClick = (state = clickInitialState, action = {}) => {
-  switch (action.type) {
-    case TOGGLE:
-      return {
-        ...state,
-        flipped: !state.flipped,
-        cardToFlip: action.payload
-      };
 
     default:
       return state;

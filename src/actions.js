@@ -22,13 +22,3 @@ export const requestHeroes = () => dispatch => {
     .then(data => dispatch({ type: REQUEST_HEROES_SUCCESS, payload: data }))
     .catch(err => dispatch({ type: REQUEST_HEROES_FAILED, payload: err }));
 };
-
-export const setHeroID = event => ({
-  type: SET_CURRENT_HERO,
-  payload: event
-});
-
-export const setOnClick = e => ({
-  type: TOGGLE,
-  payload: e
-});
