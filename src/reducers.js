@@ -22,7 +22,8 @@ const heroIdInitialState = {
 };
 
 const clickInitialState = {
-  flipped: false
+  flipped: false,
+  cardToFlip: ""
 };
 
 //////Here i use default params in case state or action is empty

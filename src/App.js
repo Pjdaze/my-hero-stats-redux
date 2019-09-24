@@ -20,7 +20,7 @@ const mapStateToProps = state => {
     isPending: state.requestHeroes.isPending,
     err: state.requestHeroes.err,
     flipped: state.setOnClick.flipped,
-    setHero: state.setHeroID.ca
+    cardToFlip: state.setOnClick.cardToFlip
   };
 };
 
@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => {
     onSearchChange: event => dispatch(setSearchField(event.target.value)),
     onRequestHeroes: () => dispatch(requestHeroes()),
     handleClick: e => dispatch(setOnClick(e.target.id)),
-    setCurrentHero: event => dispatch(setHeroID(event.target.id))
+    setCurrentHero: e => dispatch(setHeroID(e.target.id))
   };
 };
 
@@ -44,11 +44,11 @@ class App extends React.Component {
       onSearchChange,
       searchField,
       isPending,
-      setHeroID,
+      setCurrentHero,
       handleClick,
       flipped
     } = this.props;
-    console.log("is pending ....", this.props.isPending);
+
     const findHeroe = heroes.filter(x =>
       x.name.toLowerCase().includes(searchField.toLowerCase())
     );
@@ -66,7 +66,7 @@ class App extends React.Component {
           heroes={findHeroe.slice(0, 12)}
           onFlip={handleClick}
           isFlipped={flipped}
-          cardToFlip={setHeroID}
+          cardToFlip={setCurrentHero}
         />
         <Routes />
       </HomeWrap>
