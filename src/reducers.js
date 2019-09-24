@@ -22,8 +22,7 @@ const heroIdInitialState = {
 };
 
 const clickInitialState = {
-  flipped: false,
-  cardToFlip: ""
+  flipped: false
 };
 
 //////Here i use default params in case state or action is empty
@@ -55,7 +54,6 @@ export const requestHeroes = (state = heroesInitialState, action = {}) => {
 export const setHeroID = (state = heroIdInitialState, action = {}) => {
   switch (action.type) {
     case SET_CURRENT_HERO:
-      console.log("PAYLOADDDDDD", action.payload);
       return { ...state, cardToFlip: action.payload };
 
     default:
