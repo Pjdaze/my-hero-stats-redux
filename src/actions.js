@@ -4,8 +4,7 @@ import {
   REQUEST_HEROES_SUCCESS,
   REQUEST_HEROES_FAILED,
   SET_CURRENT_HERO,
-  CLICK_OFF,
-  CLICK_ON
+  TOGGLE
 } from "./constants";
 
 //for search box
@@ -26,9 +25,10 @@ export const requestHeroes = () => dispatch => {
 
 export const setHeroID = event => ({
   type: SET_CURRENT_HERO,
-  payload: event.target.id
+  payload: event
 });
 
-export const setOnClick = () => dispatch => {
-  dispatch({ type: CLICK_OFF });
-};
+export const setOnClick = e => ({
+  type: TOGGLE,
+  payload: e
+});

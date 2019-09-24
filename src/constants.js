@@ -5,3 +5,4 @@ export const REQUEST_HEROES_FAILED = "REQUEST_HEROES_FAILED";
 export const SET_CURRENT_HERO = "SET_CURRENT_HERO";
 export const CLICK_OFF = "CLICK_OFF";
 export const CLICK_ON = "CLICK_ON";
+export const TOGGLE = "TOGGLE";

@@ -4,7 +4,7 @@ import {
   REQUEST_HEROES_SUCCESS,
   REQUEST_HEROES_FAILED,
   SET_CURRENT_HERO,
-  CLICK_OFF
+  TOGGLE
 } from "./constants";
 
 const searchInitialState = {
@@ -52,7 +52,7 @@ export const requestHeroes = (state = heroesInitialState, action = {}) => {
   }
 };
 
-export const setHero = (state = heroIdInitialState, action = {}) => {
+export const setHeroID = (state = heroIdInitialState, action = {}) => {
   switch (action.type) {
     case SET_CURRENT_HERO:
       console.log("PAYLOADDDDDD", action.payload);
@@ -62,10 +62,15 @@ export const setHero = (state = heroIdInitialState, action = {}) => {
       return state;
   }
 };
+
 export const setOnClick = (state = clickInitialState, action = {}) => {
   switch (action.type) {
-    case CLICK_OFF:
-      return { ...state, flipped: !state.flipped, cardToFlip: action.payload };
+    case TOGGLE:
+      return {
+        ...state,
+        flipped: !state.flipped,
+        cardToFlip: action.payload
+      };
 
     default:
       return state;

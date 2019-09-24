@@ -1,11 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import HomeWrap from "./Wrappers/HomeWrap";
-
-import { heroes } from "./fake_data/Heroes";
 import SearchBox from "./components/SearchBox";
 import HeroCardList from "./components/HeroCardList";
-import ScrollBox from "./components/ScrollBox";
 import Routes from "./routes";
 import "./App.css";
 
@@ -23,7 +20,7 @@ const mapStateToProps = state => {
     isPending: state.requestHeroes.isPending,
     err: state.requestHeroes.err,
     flipped: state.setOnClick.flipped,
-    setHero: state.setHero.cardToFlip
+    setHero: state.setHeroID
   };
 };
 
@@ -31,7 +28,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onSearchChange: event => dispatch(setSearchField(event.target.value)),
     onRequestHeroes: () => dispatch(requestHeroes()),
-    handleClick: () => dispatch(setOnClick())
+    handleClick: event => dispatch(setOnClick(event.target.id))
   };
 };
 
@@ -61,8 +58,8 @@ class App extends React.Component {
       onSearchChange,
       searchField,
       isPending,
-      setHero,
-      setOnClick,
+      setHeroID,
+      handleClick,
       flipped
     } = this.props;
 
@@ -81,9 +78,9 @@ class App extends React.Component {
         <SearchBox searchChange={onSearchChange} />
         <HeroCardList
           heroes={findHeroe.slice(0, 12)}
-          onFlip={setOnClick}
+          onFlip={handleClick}
           isFlipped={flipped}
-          cardToFlip={setHero}
+          cardToFlip={setHeroID}
         />
         <Routes />
       </HomeWrap>

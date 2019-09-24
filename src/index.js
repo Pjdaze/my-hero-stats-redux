@@ -7,13 +7,13 @@ import thunkMiddleware from "redux-thunk";
 
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { searchHeroes, requestHeroes, setHero, setOnClick } from "./reducers";
+import { searchHeroes, requestHeroes, setHeroID, setOnClick } from "./reducers";
 import * as serviceWorker from "./serviceWorker";
 const logger = createLogger();
 const rootReducer = combineReducers({
   searchHeroes,
   requestHeroes,
-  setHero,
+  setHeroID,
   setOnClick
 });
 const store = createStore(
