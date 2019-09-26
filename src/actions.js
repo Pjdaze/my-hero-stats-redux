@@ -29,6 +29,8 @@ export const setHeroID = event => ({
 });
 
 export const setOnClick = e => ({
-  type: TOGGLE,
+  type: SET_CURRENT_HERO,
   payload: e
 });
+
+export const closeHeroCard = () => ({type: 'CLOSE_HERO_CARD'});

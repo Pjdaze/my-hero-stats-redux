@@ -1,6 +1,8 @@
 import React from "react";
+import {connect} from "react-redux";
 import HeroCardWrapper from "../Wrappers/HeroCardWrapper";
 import TwitterButton from "./TwitterButton";
+import {closeHeroCard} from "../actions";
 
 const FlippedCard = ({
   images,
@@ -8,7 +10,8 @@ const FlippedCard = ({
   powers,
   appearance,
   biography,
-  onFlip
+  onFlip,
+  closeHeroCard
 }) => {
   //const appearanceStats = Object.entries(appearance);
 
@@ -53,7 +56,7 @@ const FlippedCard = ({
       <button
         className="flip-button"
         style={{ marginBottom: "10px" }}
-        onClick={onFlip}
+        onClick={closeHeroCard}
       >
         FlIP CARD
       </button>
@@ -62,4 +65,9 @@ const FlippedCard = ({
   );
 };
 
-export default FlippedCard;
+const mapState = state => ({});
+const mapDispatch = {
+  closeHeroCard
+};
+
+export default connect(mapState, mapDispatch)(FlippedCard);

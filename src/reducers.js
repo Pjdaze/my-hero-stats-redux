@@ -64,18 +64,15 @@ export const setHeroID = (state = heroIdInitialState, action = {}) => {
 
 export const setOnClick = (state = clickInitialState, action = {}) => {
   switch (action.type) {
-    case TOGGLE:
-      return {
-        ...state,
-        flipped: !state.flipped
-      };
-
     case SET_CURRENT_HERO:
       return {
         ...state,
-        flipped: !state.flipped,
+        flipped: true,
         cardToFlip: action.payload
       };
+    case 'CLOSE_HERO_CARD':
+      return { ...state, flipped: false, cardToFlip: null };
+
 
     default:
       return state;
