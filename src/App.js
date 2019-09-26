@@ -43,7 +43,7 @@ class App extends React.Component {
       onSearchChange,
       searchField,
       isPending,
-
+      cardToFlip,
       handleClick,
       flipped
     } = this.props;
@@ -65,7 +65,7 @@ class App extends React.Component {
           heroes={findHeroe.slice(0, 12)}
           onFlip={handleClick}
           isFlipped={flipped}
-          cardToFlip={handleClick}
+          cardToFlip={cardToFlip}
         />
         <Routes />
       </HomeWrap>
