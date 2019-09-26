@@ -28,8 +28,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onSearchChange: event => dispatch(setSearchField(event.target.value)),
     onRequestHeroes: () => dispatch(requestHeroes()),
-    handleClick: e => dispatch(setOnClick(e.target.id)),
-    setCurrentHero: e => dispatch(setHeroID(e.target.id))
+    handleClick: e => dispatch(setOnClick(e.target.id))
   };
 };
 
@@ -44,7 +43,7 @@ class App extends React.Component {
       onSearchChange,
       searchField,
       isPending,
-      setCurrentHero,
+
       handleClick,
       flipped
     } = this.props;
@@ -66,7 +65,7 @@ class App extends React.Component {
           heroes={findHeroe.slice(0, 12)}
           onFlip={handleClick}
           isFlipped={flipped}
-          cardToFlip={setCurrentHero}
+          cardToFlip={handleClick}
         />
         <Routes />
       </HomeWrap>

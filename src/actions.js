@@ -28,6 +28,7 @@ export const setHeroID = event => ({
   payload: event
 });
 
-export const setOnClick = () => dispatch => {
-  dispatch({ type: TOGGLE, payload: setHeroID.payload });
-};
+export const setOnClick = e => ({
+  type: TOGGLE,
+  payload: e
+});

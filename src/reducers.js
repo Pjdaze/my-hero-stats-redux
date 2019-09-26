@@ -67,6 +67,12 @@ export const setOnClick = (state = clickInitialState, action = {}) => {
     case TOGGLE:
       return {
         ...state,
+        flipped: !state.flipped
+      };
+
+    case SET_CURRENT_HERO:
+      return {
+        ...state,
         flipped: !state.flipped,
         cardToFlip: action.payload
       };
