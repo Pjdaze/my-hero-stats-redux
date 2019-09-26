@@ -4,7 +4,7 @@ import {
   REQUEST_HEROES_SUCCESS,
   REQUEST_HEROES_FAILED,
   SET_CURRENT_HERO,
-  TOGGLE
+  CLOSE_HERO_CARD
 } from "./constants";
 
 //for search box
@@ -23,12 +23,11 @@ export const requestHeroes = () => dispatch => {
     .catch(err => dispatch({ type: REQUEST_HEROES_FAILED, payload: err }));
 };
 
-export const setHeroID = event => ({
+export const setOnClick = e => ({
   type: SET_CURRENT_HERO,
-  payload: event
+  payload: e
 });
 
-export const setOnClick = e => ({
-  type: TOGGLE,
-  payload: e
+export const closeHeroCard = () => ({
+  type: CLOSE_HERO_CARD
 });

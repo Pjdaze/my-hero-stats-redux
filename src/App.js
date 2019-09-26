@@ -6,12 +6,7 @@ import HeroCardList from "./components/HeroCardList";
 import Routes from "./routes";
 import "./App.css";
 
-import {
-  setSearchField,
-  requestHeroes,
-  setOnClick,
-  setHeroID
-} from "./actions";
+import { setSearchField, requestHeroes, setOnClick } from "./actions";
 
 const mapStateToProps = state => {
   return {
@@ -43,7 +38,7 @@ class App extends React.Component {
       onSearchChange,
       searchField,
       isPending,
-
+      cardToFlip,
       handleClick,
       flipped
     } = this.props;
@@ -65,7 +60,7 @@ class App extends React.Component {
           heroes={findHeroe.slice(0, 12)}
           onFlip={handleClick}
           isFlipped={flipped}
-          cardToFlip={handleClick}
+          cardToFlip={cardToFlip}
         />
         <Routes />
       </HomeWrap>

@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://pjdaze.github.io/my-hero-stats-redux/",
   "dependencies": {
+    "compdata": "^1.0.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "prettier": "^1.18.2",
