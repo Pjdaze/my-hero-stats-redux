@@ -70,7 +70,11 @@ export const setOnClick = (state = clickInitialState, action = {}) => {
         flipped: true,
         cardToFlip: action.payload
       };
+
     case CLOSE_HERO_CARD:
+      return { ...state, flipped: false, cardToFlip: null };
+
+    case "CLOSE_HERO_CARD":
       return { ...state, flipped: false, cardToFlip: null };
 
     default:

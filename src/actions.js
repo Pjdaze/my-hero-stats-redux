@@ -23,11 +23,17 @@ export const requestHeroes = () => dispatch => {
     .catch(err => dispatch({ type: REQUEST_HEROES_FAILED, payload: err }));
 };
 
-export const setOnClick = e => ({
-  type: SET_CURRENT_HERO,
-  payload: e
-});
+
 
 export const closeHeroCard = () => ({
   type: CLOSE_HERO_CARD
+
+})
+
+export const setOnClick = e => ({
+  type: SET_CURRENT_HERO,
+  payload: e
+
 });
+
+export const closeHeroCard = () => ({type: CLOSE_HERO_CARD});
