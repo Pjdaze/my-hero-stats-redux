@@ -6,7 +6,12 @@ import HeroCardList from "./components/HeroCardList";
 import Routes from "./routes";
 import "./App.css";
 
-import { setSearchField, requestHeroes, setOnClick } from "./actions";
+import {
+  setSearchField,
+  requestHeroes,
+  setOnClick,
+  setHeroID
+} from "./actions";
 
 const mapStateToProps = state => {
   return {

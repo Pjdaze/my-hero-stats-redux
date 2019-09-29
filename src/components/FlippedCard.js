@@ -1,13 +1,8 @@
 import React from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import HeroCardWrapper from "../Wrappers/HeroCardWrapper";
 import TwitterButton from "./TwitterButton";
-
 import { closeHeroCard } from "../actions";
-import { connect } from "react-redux";
-
-import {closeHeroCard} from "../actions";
-
 
 const FlippedCard = ({
   images,
@@ -72,7 +67,6 @@ const FlippedCard = ({
 
 const mapState = state => ({});
 const mapDispatch = {
-
   closeHeroCard
 };
 
@@ -80,9 +74,3 @@ export default connect(
   mapState,
   mapDispatch
 )(FlippedCard);
-
-  closeHeroCard
-};
-
-export default connect(mapState, mapDispatch)(FlippedCard);
-
