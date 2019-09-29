@@ -9,56 +9,43 @@ import ScrollBox from "./components/ScrollBox";
 import Routes from "./routes";
 import "./App.css";
 
-import { setSearchField } from "./actions";
+import { setSearchField, requestHeroes, setOnClick } from "./actions";
 
 const mapStateToProps = state => {
   return {
-    searchField: state.searchField
+    searchField: state.searchHeroes.searchField,
+    heroes: state.requestHeroes.heroes,
+    isPending: state.requestHeroes.isPending,
+    err: state.requestHeroes.err,
+    flipped: state.setOnClick.flipped,
+    cardToFlip: state.setOnClick.cardToFlip
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSearchChange: event => dispatch(setSearchField(event.target.value))
+    onSearchChange: event => dispatch(setSearchField(event.target.value)),
+
+    onRequestHeroes: () => dispatch(requestHeroes()),
+    handleClick: e => dispatch(setOnClick(e.target.id))
   };
 };
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      heroes: [],
-
-      flipped: false,
-      cardToFlip: ""
-    };
-  }
   componentDidMount() {
-    console.log(this.props.getState);
-
-    fetch("https://akabab.github.io/superhero-api/api/all.json")
-      .then(data => data.json())
-      .then(res => {
-        this.setState({ heroes: res });
-
-        console.log(
-          "This is the data form the Heroes API: ",
-          res.slice(0, 100)
-        );
-      });
+    this.props.onRequestHeroes();
   }
-
-  handleClick = e => {
-    this.setState({
-      flipped: !this.state.flipped,
-      cardToFlip: e.target.id
-    });
-  };
 
   render() {
-    const { heroes, flipped, cardToFlip } = this.state;
-    const { onSearchChange, searchField } = this.props;
+    const {
+      heroes,
+      onSearchChange,
+      searchField,
+      isPending,
+      cardToFlip,
+      handleClick,
+      flipped
+    } = this.props;
 
     const findHeroe = heroes.filter(x =>
       x.name.toLowerCase().includes(searchField.toLowerCase())
@@ -73,7 +60,7 @@ class App extends React.Component {
         <SearchBox searchChange={onSearchChange} />
         <HeroCardList
           heroes={findHeroe.slice(0, 12)}
-          onFlip={this.handleClick}
+          onFlip={handleClick}
           isFlipped={flipped}
           cardToFlip={cardToFlip}
         />
