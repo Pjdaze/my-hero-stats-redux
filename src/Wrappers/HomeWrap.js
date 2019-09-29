@@ -7,10 +7,11 @@ const HomeWrap = styled.div`
   align-items: center;
   text-align: center;
   margin: 0 auto;
-  height: 100%;
+
   background-image: url(${SpaceBG});
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
 
   header {
