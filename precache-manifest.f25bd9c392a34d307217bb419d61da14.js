@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cfcaf2bb9779f2b83888a6b8005ddc9b",
+    "revision": "9b080fa62f2dff6a88aded42268d5c62",
     "url": "/my-hero-stats-redux/index.html"
   },
   {
-    "revision": "36037494b1582081d505",
+    "revision": "5038b7c8884aa7355673",
     "url": "/my-hero-stats-redux/static/css/main.b01448ff.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/my-hero-stats-redux/static/js/2.8a3f9292.chunk.js"
   },
   {
-    "revision": "36037494b1582081d505",
-    "url": "/my-hero-stats-redux/static/js/main.76a962b8.chunk.js"
+    "revision": "5038b7c8884aa7355673",
+    "url": "/my-hero-stats-redux/static/js/main.f0a14d9e.chunk.js"
   },
   {
     "revision": "af0acd09776ee3837d59",
