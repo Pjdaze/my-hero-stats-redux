@@ -26,11 +26,10 @@ const FlippedCard = ({
       <div className="img-wrap">
         <img src={images} alt="heroes" />
       </div>
-      <div
-        style={{
-          textShadow: "0px 1px 5px #003F7F"
-        }}
-      >
+      <button className="flip-button" onClick={closeHeroCard}>
+        FlIP CARD
+      </button>
+      <div className="flipped-card">
         {" "}
         <p className="card-titles">Name:</p>
         <p>{name}</p>
@@ -40,9 +39,9 @@ const FlippedCard = ({
         <p>{biography.placeOfBirth}</p>
         <p className="card-titles">First Appearance:</p>
         <p>{biography.firstAppearance}</p>
-        <p>Publisher</p>
+        <span className="card-titles">Publisher:</span>
         <p>{biography.firstAppearance}</p>
-        <p className="card-titles">Appearance</p>
+        <p className="card-titles">Appearance:</p>
         <ul>
           <li>Gender: {appearance.gender}</li>
           <li>Race: {appearance.race}</li>
@@ -50,16 +49,12 @@ const FlippedCard = ({
           <li>Height: {appearance.height[0]}</li>
           <li>Weight: {appearance.weight[0]}</li>
         </ul>
-        <h2>Powers Stats</h2>
+      </div>
+      <div className="power-stats">
+        <p className="card-titles">Powers Stats</p>
         <ul>{getStats}</ul>
       </div>
-      <button
-        className="flip-button"
-        style={{ marginBottom: "10px" }}
-        onClick={closeHeroCard}
-      >
-        FlIP CARD
-      </button>
+
       <TwitterButton />
     </HeroCardWrapper>
   );

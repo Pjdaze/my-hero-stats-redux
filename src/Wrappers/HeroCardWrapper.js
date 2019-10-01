@@ -3,7 +3,20 @@ import styled, { css } from "styled-components";
 const HeroCardWrapper = styled.div`
   border-radius: 7px;
   background-color: #1d66bb;
+  transition: 500ms ease-in-out;
+  &:hover {
+    background-color: #222;
+    .flip-button {
+      display: block;
+      margin-bottom: 60%;
+    }
 
+    img {
+      opacity: 0;
+    }
+    width: 300px;
+    height: 550px;
+  }
   width: 150px;
   position: relative;
 
@@ -29,6 +42,7 @@ const HeroCardWrapper = styled.div`
     font-weight: bold;
     transition: linear 0.3s ease-in-out;
     color: #f5f5f5;
+    display: none;
   }
 
   box-shadow: 0 0 5px 0px #f5f5f5;
@@ -36,19 +50,74 @@ const HeroCardWrapper = styled.div`
   ${props =>
     props.primary &&
     css`
- background: #000046;
-        background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046);
-        background: linear-gradient(to bottom, #1CB5E0, #000046);
-  width: 350px;
+
+
+background: #a8ff78;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+padding: 10px;
+
+
 position: absolute;
 left: 50%;
 margin-left: -175px;
  background-repeat: no-repeat;
         background-size: cover;
         overflow-Y: scroll;
-        height: 500px;
-        color #fff;
+width: 425px;
+        height: 600px;
+        color: #f5f5f5;
         text-shadow: 0px 1px 5px #003F7F;
+.flipped-card {
+
+
+
+  *{
+
+  border 1px solid #fff;
+}
+
+
+display: grid; 
+grid-template-columns: 1fr 1fr;
+
+
+text-align: left
+p {
+  padding: 15px;
+
+  margin-bottom: 8px;
+}
+
+
+}
+
+&:hover {
+    background-color: #222;
+    .flip-button {
+      display: block;
+      margin-bottom: 60%;
+    }
+
+    img {
+      opacity: 0;
+    }
+    width: 425px;
+    height: 650px;
+  }
+
+.power-stats {
+  *{
+    box-sizing: border-box;
+  border 1px solid #fff;
+  text-align: left;
+
+}
+  display: grid; 
+
+grid-template-columns: 1fr 1fr;
+
+}
     
 img {
     border-radius: 50%;
@@ -56,7 +125,9 @@ img {
     width: 150px;
  
   }
-
+  li {
+  padding: 15px;
+}
 
 
     `}

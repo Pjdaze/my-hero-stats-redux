@@ -45,7 +45,6 @@ class App extends React.Component {
       heroes,
       onSearchChange,
       searchField,
-      isPending,
       cardToFlip,
       handleClick,
       flipped
