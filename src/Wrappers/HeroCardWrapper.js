@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const HeroCardWrapper = styled.div`
   border-radius: 7px;
   background-color: #1d66bb;
-  transition: 500ms ease-in-out;
+  transition: ALl 500ms ease-in-out;
   &:hover {
     background-color: #222;
     .flip-button {
@@ -14,8 +14,6 @@ const HeroCardWrapper = styled.div`
     img {
       opacity: 0;
     }
-    width: 300px;
-    height: 550px;
   }
   width: 150px;
   position: relative;
@@ -58,14 +56,20 @@ background: linear-gradient(to bottom, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, 
 padding: 10px;
 
 
-position: absolute;
-left: 50%;
-margin-left: -175px;
+
+
+
  background-repeat: no-repeat;
         background-size: cover;
         overflow-Y: scroll;
-width: 425px;
-        height: 600px;
+position: absolute;
+left: 50%;
+margin-left: -500px;
+min-width: 1000px;
+
+
+height: 800px;
+
         color: #f5f5f5;
         text-shadow: 0px 1px 5px #003F7F;
 .flipped-card {
@@ -92,18 +96,12 @@ p {
 
 }
 
-&:hover {
-    background-color: #222;
-    .flip-button {
-      display: block;
-      margin-bottom: 60%;
-    }
+
 
     img {
-      opacity: 0;
+
     }
-    width: 425px;
-    height: 650px;
+ 
   }
 
 .power-stats {
@@ -129,6 +127,20 @@ img {
   padding: 15px;
 }
 
+
+&:hover {
+background-color: #222;
+    .flip-button {
+      color: #222;
+      display: block;
+      margin-bottom: 0;
+      
+    }
+
+
+    img {
+      opacity: 1;
+    }
 
     `}
 
