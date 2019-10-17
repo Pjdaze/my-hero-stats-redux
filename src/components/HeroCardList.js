@@ -1,9 +1,14 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import HeroCard from "../components/HeroCard";
 import ScrollBox from "./ScrollBox";
 import FlippedCard from "./FlippedCard";
 
-const HeroCardList = ({ heroes, onFlip, isFlipped, cardToFlip }) => {
+const HeroCardList = ({ heroes, onFlip, isFlipped, cardToFlip, history }) => {
+  const chooseHero = e => {
+    onFlip(e);
+    history.push("/heroDetail");
+  };
   return (
     <ScrollBox>
       {heroes.map((x, i) => {
@@ -13,7 +18,7 @@ const HeroCardList = ({ heroes, onFlip, isFlipped, cardToFlip }) => {
               key={Math.random() + heroes[i]}
               name={heroes[i].name}
               images={heroes[i].images.lg}
-              onFlip={onFlip}
+              onFlip={chooseHero}
             />
           );
         } else if (heroes[i].name === cardToFlip) {
@@ -35,4 +40,4 @@ const HeroCardList = ({ heroes, onFlip, isFlipped, cardToFlip }) => {
   );
 };
 
-export default HeroCardList;
+export default withRouter(HeroCardList);

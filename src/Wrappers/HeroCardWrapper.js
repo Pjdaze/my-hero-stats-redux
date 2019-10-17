@@ -57,15 +57,17 @@ padding: 10px;
 
 
 
-
+border: 1px solid orange;
 
  background-repeat: no-repeat;
         background-size: cover;
         overflow-Y: scroll;
-position: absolute;
-left: 50%;
+
+
 margin-left: -500px;
-min-width: 1000px;
+width: 75%;
+margin: 0 auto !important;
+min-width: 600px;
 
 
 height: 800px;
