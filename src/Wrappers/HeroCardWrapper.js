@@ -45,14 +45,14 @@ const HeroCardWrapper = styled.div`
 
   box-shadow: 0 0 5px 0px #f5f5f5;
 
+  /* primary starts here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
   ${props =>
     props.primary &&
     css`
 
 
-background: #a8ff78;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+#303b47;
 padding: 10px;
 
 
@@ -61,18 +61,18 @@ border: 1px solid orange;
 
  background-repeat: no-repeat;
         background-size: cover;
-        overflow-Y: scroll;
 
 
-margin-left: -500px;
-width: 75%;
-margin: 0 auto !important;
-min-width: 600px;
 
 
-height: 800px;
+width: 95%;
+max-width: 350px;
+margin: 200px auto;
 
-        color: #f5f5f5;
+height: 450px;
+overflow-Y: scroll;
+
+    color: #f5f5f5;
         text-shadow: 0px 1px 5px #003F7F;
 .flipped-card {
 

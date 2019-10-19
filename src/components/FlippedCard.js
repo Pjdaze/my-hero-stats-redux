@@ -4,18 +4,21 @@ import HeroCardWrapper from "../Wrappers/HeroCardWrapper";
 import TwitterButton from "./TwitterButton";
 import { closeHeroCard } from "../actions";
 
-const FlippedCard = ({
-  images,
-  name,
-  powers,
-  appearance,
-  biography,
-  onFlip,
-  closeHeroCard
-}) => {
+const FlippedCard = ({ onFlip, closeHeroCard, selectedHero, history }) => {
   //const appearanceStats = Object.entries(appearance);
+  if (!selectedHero.details || !selectedHero.details.id) {
+    history.push("/");
+    return null;
+  }
 
-  const powerStats = Object.entries(powers);
+  const {
+    appearance,
+    powerstats,
+    images,
+    name,
+    biography
+  } = selectedHero.details;
+  const powerStats = Object.entries(powerstats);
 
   const getStats = powerStats.map((stats, i) => (
     <li key={i}>{`${stats[0]}: ${stats[1]}`}</li>
@@ -60,7 +63,9 @@ const FlippedCard = ({
   );
 };
 
-const mapState = state => ({});
+const mapState = state => ({
+  selectedHero: state.selectedHero
+});
 const mapDispatch = {
   closeHeroCard
 };

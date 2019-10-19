@@ -67,7 +67,6 @@ class App extends React.Component {
           isFlipped={flipped}
           cardToFlip={cardToFlip}
         />
-        <Routes />
       </HomeWrap>
     );
   }

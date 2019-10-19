@@ -4,7 +4,8 @@ import {
   REQUEST_HEROES_SUCCESS,
   REQUEST_HEROES_FAILED,
   SET_CURRENT_HERO,
-  CLOSE_HERO_CARD
+  CLOSE_HERO_CARD,
+  SELECTED_HERO_DETAILS
 } from "./constants";
 
 //for search box
@@ -29,4 +30,9 @@ export const closeHeroCard = () => ({
 export const setOnClick = e => ({
   type: SET_CURRENT_HERO,
   payload: e
+});
+
+export const selectHero = heroDetails => ({
+  type: SELECTED_HERO_DETAILS,
+  payload: heroDetails
 });

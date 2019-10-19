@@ -7,3 +7,4 @@ export const CLICK_OFF = "CLICK_OFF";
 export const CLICK_ON = "CLICK_ON";
 export const TOGGLE = "TOGGLE";
 export const CLOSE_HERO_CARD = "CLOSE_HERO_CARD";
+export const SELECTED_HERO_DETAILS = "SELECTED_HERO_DETAILS";

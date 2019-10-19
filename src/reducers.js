@@ -4,7 +4,8 @@ import {
   REQUEST_HEROES_SUCCESS,
   REQUEST_HEROES_FAILED,
   SET_CURRENT_HERO,
-  CLOSE_HERO_CARD
+  CLOSE_HERO_CARD,
+  SELECTED_HERO_DETAILS
 } from "./constants";
 
 const searchInitialState = {
@@ -23,7 +24,8 @@ const heroIdInitialState = {
 
 const clickInitialState = {
   flipped: false,
-  cardToFlip: ""
+  cardToFlip: "",
+  selectedHeroDetails: null
 };
 
 //////Here i use default params in case state or action is empty
@@ -64,6 +66,11 @@ export const setHeroID = (state = heroIdInitialState, action = {}) => {
 
 export const setOnClick = (state = clickInitialState, action = {}) => {
   switch (action.type) {
+    case SELECTED_HERO_DETAILS:
+      return {
+        ...state,
+        selectedHeroDetails: action.payload
+      };
     case SET_CURRENT_HERO:
       return {
         ...state,
@@ -77,6 +84,18 @@ export const setOnClick = (state = clickInitialState, action = {}) => {
     case "CLOSE_HERO_CARD":
       return { ...state, flipped: false, cardToFlip: null };
 
+    default:
+      return state;
+  }
+};
+
+export const selectedHero = (state = {}, action = {}) => {
+  switch (action.type) {
+    case SELECTED_HERO_DETAILS:
+      return {
+        ...state,
+        details: action.payload
+      };
     default:
       return state;
   }

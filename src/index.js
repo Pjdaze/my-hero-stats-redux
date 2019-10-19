@@ -5,9 +5,15 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import Routes from "./routes";
 
-import { searchHeroes, setHeroID, setOnClick, requestHeroes } from "./reducers";
+import {
+  searchHeroes,
+  setHeroID,
+  setOnClick,
+  requestHeroes,
+  selectedHero
+} from "./reducers";
 import * as serviceWorker from "./serviceWorker";
 
 const logger = createLogger();
@@ -15,7 +21,8 @@ const rootReducer = combineReducers({
   searchHeroes,
   requestHeroes,
   setHeroID,
-  setOnClick
+  setOnClick,
+  selectedHero
 });
 const store = createStore(
   rootReducer,
@@ -25,7 +32,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <Routes />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
