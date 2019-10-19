@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import HeroCardWrapper from "../Wrappers/HeroCardWrapper";
 import TwitterButton from "./TwitterButton";
 import { closeHeroCard } from "../actions";
+import { NavLink } from "react-router-dom";
 
 const FlippedCard = ({ onFlip, closeHeroCard, selectedHero, history }) => {
   //const appearanceStats = Object.entries(appearance);
@@ -29,9 +30,13 @@ const FlippedCard = ({ onFlip, closeHeroCard, selectedHero, history }) => {
       <div className="img-wrap">
         <img src={images} alt="heroes" />
       </div>
-      <button className="flip-button" onClick={closeHeroCard}>
-        FlIP CARD
-      </button>
+
+      <NavLink className="flip-button" to="/">
+        {" "}
+        <button className="flip-button" onClick={closeHeroCard}>
+          FLIPP CARD
+        </button>{" "}
+      </NavLink>
       <div className="flipped-card">
         {" "}
         <p className="card-titles">Name:</p>

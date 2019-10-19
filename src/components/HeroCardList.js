@@ -8,9 +8,7 @@ import { selectHero } from "../actions";
 
 const HeroCardList = ({
   heroes,
-  onFlip,
-  isFlipped,
-  cardToFlip,
+
   history,
   selectHero
 }) => {
