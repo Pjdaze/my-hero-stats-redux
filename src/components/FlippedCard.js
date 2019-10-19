@@ -5,20 +5,14 @@ import TwitterButton from "./TwitterButton";
 import { closeHeroCard } from "../actions";
 import { NavLink } from "react-router-dom";
 
-const FlippedCard = ({ onFlip, closeHeroCard, selectedHero, history }) => {
+const FlippedCard = ({ selectedHero, history, images }) => {
   //const appearanceStats = Object.entries(appearance);
   if (!selectedHero.details || !selectedHero.details.id) {
     history.push("/");
     return null;
   }
 
-  const {
-    appearance,
-    powerstats,
-    images,
-    name,
-    biography
-  } = selectedHero.details;
+  const { appearance, powerstats, name, biography } = selectedHero.details;
   const powerStats = Object.entries(powerstats);
 
   const getStats = powerStats.map((stats, i) => (
@@ -33,9 +27,7 @@ const FlippedCard = ({ onFlip, closeHeroCard, selectedHero, history }) => {
 
       <NavLink className="flip-button" to="/">
         {" "}
-        <button className="flip-button" onClick={closeHeroCard}>
-          FLIPP CARD
-        </button>{" "}
+        <button className="flip-button">FLIPP CARD</button>{" "}
       </NavLink>
       <div className="flipped-card">
         {" "}

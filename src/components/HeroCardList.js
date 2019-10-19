@@ -6,12 +6,7 @@ import ScrollBox from "./ScrollBox";
 import FlippedCard from "./FlippedCard";
 import { selectHero } from "../actions";
 
-const HeroCardList = ({
-  heroes,
-
-  history,
-  selectHero
-}) => {
+const HeroCardList = ({ heroes, images, history, selectHero }) => {
   const chooseHero = heroDetail => {
     selectHero(heroDetail);
     history.push("/heroDetail");

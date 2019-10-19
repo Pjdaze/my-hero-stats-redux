@@ -1,12 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import HomeWrap from "./Wrappers/HomeWrap";
-
-import { heroes } from "./fake_data/Heroes";
 import SearchBox from "./components/SearchBox";
 import HeroCardList from "./components/HeroCardList";
-import ScrollBox from "./components/ScrollBox";
-import Routes from "./routes";
+
 import "./App.css";
 
 import { setSearchField, requestHeroes, setOnClick } from "./actions";
