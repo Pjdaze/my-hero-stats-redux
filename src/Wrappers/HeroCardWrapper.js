@@ -52,7 +52,7 @@ const HeroCardWrapper = styled.div`
     css`
 
 
-
+#303b47;
 padding: 10px;
 
 
@@ -88,7 +88,7 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 
 
-text-align: left;
+text-align: left
 p {
   padding: 15px;
 
@@ -100,8 +100,10 @@ p {
 
 
 
-    img {
-
+    .img-wrap {
+display: flex;
+justify-content: center;
+align-items: center;
     }
  
   }
@@ -123,15 +125,12 @@ img {
     border-radius: 50%;
     height: 150px;
     width: 150px;
-
  
   }
   li {
   padding: 15px;
 }
-.mama {
-margin: 0 auto;
-}
+
 
 &:hover {
 background-color: #222;
