@@ -9,7 +9,7 @@ const FlippedCard = ({ onFlip, closeHeroCard, selectedHero, history }) => {
   //const appearanceStats = Object.entries(appearance);
   if (!selectedHero.details || !selectedHero.details.id) {
     history.push("/");
-    return null;
+    return "undefined";
   }
 
   const {
