@@ -30,10 +30,6 @@ const mapDispatchToProps = dispatch => {
 
 class App extends React.Component {
   componentDidMount() {
-    console.log(
-      `APOLOGIES FOR ALL THE ACTION LOGS, ONCE DONE WITH STYLING ALL GET THIS OUT`,
-      new Date()
-    );
     this.props.onRequestHeroes();
   }
 

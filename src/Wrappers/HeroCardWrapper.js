@@ -123,12 +123,15 @@ img {
     border-radius: 50%;
     height: 150px;
     width: 150px;
+
  
   }
   li {
   padding: 15px;
 }
-
+.mama {
+margin: 0 auto;
+}
 
 &:hover {
 background-color: #222;

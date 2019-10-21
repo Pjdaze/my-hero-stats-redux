@@ -5,30 +5,33 @@ import TwitterButton from "./TwitterButton";
 import { closeHeroCard } from "../actions";
 import { NavLink } from "react-router-dom";
 
-const FlippedCard = ({
-  onFlip,
-  closeHeroCard,
-  selectedHero,
-  history,
-  images
-}) => {
+const FlippedCard = ({ onFlip, closeHeroCard, selectedHero, history }) => {
   //const appearanceStats = Object.entries(appearance);
   if (!selectedHero.details || !selectedHero.details.id) {
     history.push("/");
     return null;
   }
 
-  const { appearance, powerstats, name, biography } = selectedHero.details;
+  const {
+    appearance,
+    powerstats,
+    name,
+    biography,
+    images
+  } = selectedHero.details;
   const powerStats = Object.entries(powerstats);
 
   const getStats = powerStats.map((stats, i) => (
     <li key={i}>{`${stats[0]}: ${stats[1]}`}</li>
   ));
 
+  const imagex = images.lg;
+  console.log("imagex", imagex);
+
   return (
     <HeroCardWrapper primary>
       <div className="img-wrap">
-        <img name="mama" src={`${images}`} alt="heroes" />
+        <img className="mama" src={imagex} alt="heroes" />
       </div>
 
       <NavLink className="flip-button" to="/">
