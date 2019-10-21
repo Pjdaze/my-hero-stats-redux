@@ -52,7 +52,7 @@ const HeroCardWrapper = styled.div`
     css`
 
 
-#303b47;
+
 padding: 10px;
 
 
@@ -88,7 +88,7 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 
 
-text-align: left
+text-align: left;
 p {
   padding: 15px;
 
