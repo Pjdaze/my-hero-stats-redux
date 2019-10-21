@@ -81,9 +81,6 @@ export const setOnClick = (state = clickInitialState, action = {}) => {
     case CLOSE_HERO_CARD:
       return { ...state, flipped: false, cardToFlip: null };
 
-    case "CLOSE_HERO_CARD":
-      return { ...state, flipped: false, cardToFlip: null };
-
     default:
       return state;
   }
