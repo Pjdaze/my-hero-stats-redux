@@ -5,8 +5,8 @@ import FlippedCard from "./components/FlippedCard";
 
 const Routes = props => (
   <Switch>
-    <Route path="/" component={App} />
-    <Route path="/heroDetail" exact component={FlippedCard} />
+    <Route path="/" exact component={App} />
+    <Route path="/heroDetail" component={FlippedCard} />
   </Switch>
 );
 
