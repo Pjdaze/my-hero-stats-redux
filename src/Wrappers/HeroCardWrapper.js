@@ -52,12 +52,12 @@ const HeroCardWrapper = styled.div`
     css`
 
 
-#303b47;
+
 padding: 10px;
 
 
 
-border: 1px solid orange;
+
 
  background-repeat: no-repeat;
         background-size: cover;
