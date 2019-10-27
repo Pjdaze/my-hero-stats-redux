@@ -26,10 +26,9 @@ const FlippedCard = ({ onFlip, closeHeroCard, selectedHero, history }) => {
   ));
 
   const imagex = images.lg;
-  console.log("imagex", imagex);
 
   return (
-    <HeroCardWrapper primary>
+    <HeroCardWrapper flipped>
       <div className="img-wrap">
         <img className="mama" src={imagex} alt="heroes" />
       </div>
